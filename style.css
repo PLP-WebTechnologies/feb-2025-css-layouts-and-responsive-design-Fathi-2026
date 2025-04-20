@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  /* Header - Flexbox */
+  header {
+    background-color: #222;
+    color: #fff;
+    padding: 1rem 0;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+  }
+  
+  .nav-links a:hover {
+    background: #444;
+    border-radius: 4px;
+  }
+  
+  /* Grid Layout for Main */
+  .grid-layout {
+    display: grid;
+    grid-template-areas:
+      "content sidebar"
+      "cards cards";
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+  
+  .content {
+    grid-area: content;
+  }
+  
+  .sidebar {
+    grid-area: sidebar;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  
+  .cards {
+    grid-area: cards;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  
+  .card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: white;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1024px) {
+    .grid-layout {
+      grid-template-areas:
+        "content"
+        "sidebar"
+        "cards";
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .nav-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5rem;
+    }
+  
+    .nav-links a {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      background-color: #333;
+    }
+  }
+  
